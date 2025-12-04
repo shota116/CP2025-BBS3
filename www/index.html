@@ -268,7 +268,7 @@ function deletePost(postId) {
     const postElement = $(`#post-${postId}`);
     postElement.addClass('deleting');
 
-    postsRef.child(postId).update({content: '削除されました'})
+    postsRef.child(postId).remove()
     .then(() => {
         showMessage('投稿を削除しました');
     })
